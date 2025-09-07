@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisha Health Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-logo">
+                    <h1>🏥 Odisha Health Assistant</h1>
+                    <p>Government of Odisha</p>
+                </div>
+                <div class="language-selector">
+                    <select id="languageSelect" class="form-control language-dropdown">
+                        <option value="english">English</option>
+                        <option value="hindi">हिंदी</option>
+                        <option value="odia">ଓଡ଼ିଆ</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="chat">💬 Chat</button>
+            <button class="tab-btn" data-tab="analytics">📊 Analytics</button>
+        </nav>
+
+        <!-- Chat Tab Content -->
+        <div class="tab-content active" id="chat-tab">
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <p id="welcomeMessage">Welcome to Odisha Health Assistant! How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Reply Buttons -->
+                <div class="quick-replies">
+                    <button class="quick-reply-btn" data-query="fever">🌡️ Fever symptoms</button>
+                    <button class="quick-reply-btn" data-query="vaccination">💉 Vaccination</button>
+                    <button class="quick-reply-btn" data-query="pregnancy">🤱 Pregnancy care</button>
+                    <button class="quick-reply-btn" data-query="emergency">🚨 Emergency</button>
+                    <button class="quick-reply-btn" data-query="dengue">🦟 Dengue prevention</button>
+                    <button class="quick-reply-btn" data-query="diarrhea">💊 Diarrhea treatment</button>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-container">
+                    <div class="message-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            class="form-control message-input" 
+                            placeholder="Type your health question..."
+                        >
+                        <button id="sendBtn" class="btn btn--primary send-btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Tab Content -->
+        <div class="tab-content" id="analytics-tab">
+            <div class="analytics-container">
+                <h2>📊 Live Analytics</h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalQueries">0</div>
+                        <div class="stat-label">Total Queries</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number" id="todayQueries">0</div>
+                        <div class="stat-label">Today's Queries</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number" id="currentLanguage">English</div>
+                        <div class="stat-label">Current Language</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-number" id="sessionQueries">0</div>
+                        <div class="stat-label">Session Queries</div>
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <h3>Language Usage</h3>
+                    <div class="language-stats">
+                        <div class="language-stat">
+                            <span>English:</span>
+                            <span class="stat-count" id="englishCount">0</span>
+                        </div>
+                        <div class="language-stat">
+                            <span>Hindi:</span>
+                            <span class="stat-count" id="hindiCount">0</span>
+                        </div>
+                        <div class="language-stat">
+                            <span>Odia:</span>
+                            <span class="stat-count" id="odiaCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <h3>Popular Topics</h3>
+                    <div class="topic-stats" id="topicStats">
+                        <div class="topic-stat">
+                            <span>Symptoms:</span>
+                            <span class="stat-count" id="symptomsCount">0</span>
+                        </div>
+                        <div class="topic-stat">
+                            <span>Prevention:</span>
+                            <span class="stat-count" id="preventionCount">0</span>
+                        </div>
+                        <div class="topic-stat">
+                            <span>Vaccination:</span>
+                            <span class="stat-count" id="vaccinationCount">0</span>
+                        </div>
+                        <div class="topic-stat">
+                            <span>Emergency:</span>
+                            <span class="stat-count" id="emergencyCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-section">
+                    <h3>Session Activity</h3>
+                    <div class="activity-log" id="activityLog">
+                        <p class="activity-item">Session started</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
